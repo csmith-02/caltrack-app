@@ -1,0 +1,22 @@
+{% extends "_template.html" %}
+
+{% block body %}
+    
+    <form action="/today" method="post">
+        <br>
+        <label for="am-of-carbs">Enter an amount of carbs: </label>
+        <input id="am-of-carbs" type="number" min="1" max="200" required>
+        <br><br>
+        <label for="am-of-pro">Enter an amount of protein: </label>
+        <input id="am-of-pro" type="number" min="1" max="200" required>
+        <br><br>
+        <label for="am-of-fats">Enter an amount of fats: </label>
+        <input id="am-of-fats" type="number" min="1" max="200" required>
+        <br><br><br>
+        <label for="am-of-cals">Enter the number of calories: </label>
+        <input id="am-of-cals" type="number" min="1" required>
+        <p>*Calories should match the caloric ratio of carbs, protein, and fats.</p>
+        <br><br><br>
+        <button type="submit" class="submit-btn">TRACK IT</button>
+    </form>
+{% endblock body %}

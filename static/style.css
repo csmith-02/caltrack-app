@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: 'Kalom', cursive;
+}
+
+body {
+    background-image: url("./background.jpeg");
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    height: 8%;
+    background-color: white;
+}
+main {
+    height: 92%;
+}
+
+.nav-item {
+    padding: 1em 2em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item h2:hover {
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    padding: 1rem;
+}

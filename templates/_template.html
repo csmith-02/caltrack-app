@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalTrack</title>
+    <link href="../static/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Red+Hat+Display&display=swap" rel="stylesheet">
+</head>
+<body style="height: 80vh;">
+    <!-- Navbar -->
+    <nav class="flex">
+        <div class="nav-item">
+          <h1>CalTrack</h1>
+        </div>
+        <div class="flex">
+            <div class="nav-item">
+                <a href="/today"><h2>TODAY</h2></a>
+            </div>
+            <div class="nav-item">
+                <a href="/track"><h2>TRACK</h2></a>
+            </div>
+            <div class="nav-item">
+                <a href="/settings"><h2>SETTINGS</h2></a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; height: 100%;">
+            <div style="grid-column-start: 2; grid-column-end: 3; padding: 2%; text-align: center; border-radius: 25px; border: 1px solid black; color: black; background-color: white; margin-top: 1rem;">
+                <h1>{{ heading }}</h1>
+                {% block body %}
+
+                {% endblock body %}
+            </div>
+        </div>
+    </main>
+</body>
+</html>
