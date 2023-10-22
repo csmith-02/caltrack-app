@@ -1,4 +1,57 @@
 {% extends "_template.html" %}
 
 {% block body %}
+<div>
+    <br>
+    <p>Name: {{ user['name'] }}</p>
+    <br>
+    <p>Height: {{ user['height'] }}</p>
+    <br>
+    <p>Weight: {{ user['weight'] }}</p>
+    <br>
+    <p>Age: {{ user['age'] }}</p>
+    <br>
+    <p>Sex: {{ user['sex']}} </p>
+    <br>
+    <p>Activity Level: 
+    {% if user['activity_level'] == "1" %}
+        Light Exercise (1-3 days a week)
+    {% elif user['activity_level'] == "2" %}
+        Moderate Exercise (4-5 days a week)
+    {% elif user['activity_level'] == "3" %}
+        Hard Exercise (6-7 days a week) 
+    {% else %}
+        error
+    {% endif %}
+    </p>
+    <br>
+</div>
+<form action="/settings" method="post">
+    <hr>
+    <br>
+    <label for="changeName">Change Name: </label>
+    <input id="changeName" name="changeName" type="text">
+    <br><br>
+    <label for="changeHeight">Change Height: </label>
+    <input id="changeHeight" name="changeHeight" type="number" min="48" max="96">
+    <p style="display:inline"> in</p>
+    <br><br>
+    <label for="changeWeight">Change Weight: </label>
+    <input id="changeweight" name="changeWeight" type="number" min="75" max="400">
+    <p style="display:inline"> lbs</p>
+    <br><br>
+    <label for="changeAge">Change Age: </label>
+    <input id="changeAge" name="changeAge" type="number" max="99" min="1">
+    <p style="display:inline"> years old</p>
+    <br><br>
+    <label for="changeActivity">Change Activity Level: </label>
+    <select name="changeActivity" id="changeActivity">
+        <option disabled selected value="">Select One</option>
+        <option value="1">Light Exercise (1-3 days a week)</option>
+        <option value="2">Moderate Exercise (3-5 days a week)</option>
+        <option value="3">Hard Exercise (6-7 days a week)</option>
+    </select>
+    <br><br>
+    <button type="submit" class="btn">UPDATE</button>
+</form>
 {% endblock body %}

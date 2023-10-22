@@ -1,5 +1,64 @@
 {% extends "_template.html" %}
 
 {% block body %}
-    
+<br>
+<h2>Hello, {{ user['name'] }} </h2>
+<br>
+<h3>You should be eating about <span style="color:red">{{ calories }}</span> calories per day.</h3>
+<br>
+{% if calsRemaining < 0 %}
+    <h3>You have exceeded your maximum calories for the day.</h3>
+    <br>
+    <h3>You have consumed <span style="color: red">{{ calories - calsRemaining }}</span> calories.</h3>
+{% else %}
+    <h3>You have <span style="color: red">{{ calsRemaining }}</span> calories remaining for today.</h3>
+    <br>
+    <h3>You have consumed <span style="color: red">{{ calories - calsRemaining }}</span> calories.</h3>
+{% endif %}
+<br>
+<hr>
+<br>
+<h3>Macros on the Day</h3>
+<br>
+<div class="today-macros">
+    <div class="macro-child">
+        <h4>Protein</h4>
+        <img src="../static/protein.png" alt="" class="img-macro">
+        <br><br>
+        <p>
+            {% if not day['protein'] %}
+                0g
+            {% else %}
+                {{ day['protein'] }}g
+            {% endif %}
+        </p>
+    </div>
+    <div class="macro-child">
+        <h4>Carbs</h4>
+        <img src="../static/carbs.png" alt="" class="img-macro">
+        <br><br>
+        <p>
+            {% if not day['carbs'] %}
+                0g
+            {% else %}
+                {{ day['carbs'] }}g
+            {% endif %}
+        </p>
+    </div>
+    <div class="macro-child">
+        <h4>Fats</h4>
+        <img src="../static/fats.png" alt="" class="img-macro">
+        <br><br>
+        <p>
+            {% if not day['fats'] %}
+                0g
+            {% else %}
+                {{ day['fats'] }}g
+            {% endif %}
+        </p>
+    </div>
+</div>
+<form action="/clear" method="get">
+    <button type="submit" class="btn">END OF DAY</button>
+</form>
 {% endblock body %}

@@ -1,22 +1,30 @@
 {% extends "_template.html" %}
 
 {% block body %}
-    
-    <form action="/today" method="post">
+    <br>
+    <h3 style="text-align: center">You currently have:</h3>
+    <br>
+    <h4><span class="macros">{{ calsRemaining }}</span> calories remaining for today</h4>
+    <br>
+    <hr>
+    <form action="/track" method="post">
         <br>
         <label for="am-of-carbs">Enter an amount of carbs: </label>
-        <input id="am-of-carbs" type="number" min="1" max="200" required>
+        <input id="am-of-carbs" name="am-of-carbs" type="number" min="1" max="200" required>
+        <p style="display:inline"> g</p>
         <br><br>
         <label for="am-of-pro">Enter an amount of protein: </label>
-        <input id="am-of-pro" type="number" min="1" max="200" required>
+        <input id="am-of-pro" name="am-of-pro" type="number" min="1" max="200" required>
+        <p style="display:inline"> g</p>
         <br><br>
         <label for="am-of-fats">Enter an amount of fats: </label>
-        <input id="am-of-fats" type="number" min="1" max="200" required>
+        <input id="am-of-fats" name="am-of-fats" type="number" min="1" max="200" required>
+        <p style="display:inline"> g</p>
         <br><br><br>
         <label for="am-of-cals">Enter the number of calories: </label>
-        <input id="am-of-cals" type="number" min="1" required>
+        <input id="am-of-cals" name="am-of-cals" type="number" min="1" required>
         <p>*Calories should match the caloric ratio of carbs, protein, and fats.</p>
-        <br><br><br>
-        <button type="submit" class="submit-btn">TRACK IT</button>
+        <br><br>
+        <button type="submit" class="btn">TRACK IT</button>
     </form>
 {% endblock body %}

@@ -17,6 +17,7 @@ body {
 nav {
     height: 8%;
     background-color: white;
+    border-bottom: 2px solid black;
 }
 main {
     height: 92%;
@@ -31,12 +32,45 @@ a {
     color: black;
 }
 
-.nav-item h2:hover {
+.nav-item h3:hover {
     color: white;
     background-color: black;
     border-radius: 5px;
 }
 
-.submit-btn {
-    padding: 1rem;
+h1 {
+    font-size: xxx-large;
+}
+
+.macros {
+    color: red;
+}
+
+.hide {
+    display: none;
+}
+
+.today-macros {
+    height: 35%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.img-macro {
+    height: 100px;
+    width: auto;
+}
+
+.btn {
+    padding: 0.5rem;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    font-size: larger;
+}
+
+.btn:hover {
+    border-radius: 30px;
+    background-color: black;
+    color: white;
 }

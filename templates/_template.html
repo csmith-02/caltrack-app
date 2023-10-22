@@ -11,29 +11,33 @@
 </head>
 <body style="height: 80vh;">
     <!-- Navbar -->
-    <nav class="flex">
+    <nav class="flex {{ hidenav }}">
         <div class="nav-item">
-          <h1>CalTrack</h1>
+          <h2>CalTrack</h2>
         </div>
         <div class="flex">
             <div class="nav-item">
-                <a href="/today"><h2>TODAY</h2></a>
+                <a href="/"><h3>TODAY</h3></a>
             </div>
             <div class="nav-item">
-                <a href="/track"><h2>TRACK</h2></a>
+                <a href="/track"><h3>TRACK</h3></a>
             </div>
             <div class="nav-item">
-                <a href="/settings"><h2>SETTINGS</h2></a>
+                <a href="/settings"><h3>SETTINGS</h3></a>
             </div>
         </div>
     </nav>
     <main>
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; height: 100%;">
             <div style="grid-column-start: 2; grid-column-end: 3; padding: 2%; text-align: center; border-radius: 25px; border: 1px solid black; color: black; background-color: white; margin-top: 1rem;">
-                <h1>{{ heading }}</h1>
-                {% block body %}
+                <div style="display: grid; grid-template-columns: 1fr 5fr 1fr">
+                    <div style="grid-column-start:2; grid-column-end:3;">
+                        <h1 style="text-decoration: underline;">{{ heading }}</h1>
+                        {% block body %}
 
-                {% endblock body %}
+                        {% endblock body %}
+                    </div>
+                </div>
             </div>
         </div>
     </main>
