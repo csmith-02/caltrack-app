@@ -12,7 +12,7 @@ meal = {}
 day = {}
 
 global calories
-calories_consumed = 0
+global calories_consumed
 
 def newDay():
     global day
@@ -67,10 +67,10 @@ def initial():
     user['age'] = request.form.get('age')
 
     gen = request.form.get('sex')
-    if int(gen) == 1:
+    if gen == "1":
         user['sex'] = 'Male'
-    elif int(gen) == 2:
-        user['sex'] == 'Female'
+    elif gen == "2":
+        user['sex'] = 'Female'
     else:
         abort(400)
 
@@ -110,16 +110,17 @@ def settings():
 @app.post('/settings')
 def update_settings():
     global user
+
+    if request.form.get('btn') == 'CHANGE USER':
+        return redirect('/setup', 302)
+
     out_file = open('information.json', 'w')
 
-    name = request.form.get('changeName')
     height = request.form.get('changeHeight')
     weight = request.form.get('changeWeight')
     age = request.form.get('changeAge')
     activity = request.form.get('changeActivity')
 
-    if name:
-        user['name'] = name
     if height:
         user['height'] = height
     if weight:
@@ -128,7 +129,7 @@ def update_settings():
         user['age'] = age
     if activity:
         user['activity_level'] = activity
-    if not name and height and weight and age and activity:
+    if not height and weight and age and activity:
         # do nothing
         pass
     else:
@@ -152,7 +153,7 @@ def post_calories():
         validateMeal(carbs, protein, fats, cals)
     except:
         pyautogui.alert('Invalid Caloric Ratio of Macros to Calories')
-        redirect('/track', 302)
+        return redirect('/track', 302)
 
     calories_consumed = calories_consumed + int(cals)
 

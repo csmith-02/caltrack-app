@@ -29,9 +29,6 @@
 <form action="/settings" method="post">
     <hr>
     <br>
-    <label for="changeName">Change Name: </label>
-    <input id="changeName" name="changeName" type="text">
-    <br><br>
     <label for="changeHeight">Change Height: </label>
     <input id="changeHeight" name="changeHeight" type="number" min="48" max="96">
     <p style="display:inline"> in</p>
@@ -52,6 +49,7 @@
         <option value="3">Hard Exercise (6-7 days a week)</option>
     </select>
     <br><br>
-    <button type="submit" class="btn">UPDATE</button>
+    <input type="submit" name="btn" id="btn" class="btn" value="UPDATE">
+    <input type="submit" name="btn" id="btn" class="btn" style="margin-left: 1rem;" value="CHANGE USER">
 </form>
 {% endblock body %}

@@ -7,7 +7,7 @@
 <h3>You should be eating about <span style="color:red">{{ calories }}</span> calories per day.</h3>
 <br>
 {% if calsRemaining < 0 %}
-    <h3>You have exceeded your maximum calories for the day.</h3>
+    <h3>You have exceeded your maximum calories.</h3>
     <br>
     <h3>You have consumed <span style="color: red">{{ calories - calsRemaining }}</span> calories.</h3>
 {% else %}
